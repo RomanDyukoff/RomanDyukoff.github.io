@@ -1,0 +1,264 @@
+@import url("normalize.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 30px 0;
+  background: #dddcdc;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__title {
+  font-size: 30px;
+  text-align: center;
+  width: 345px;
+  transition: all 0.3s;
+}
+
+.header__title:hover {
+  letter-spacing: 3px;
+}
+
+/* style user */
+
+.user {
+  width: 100%;
+  height: 100vh;
+}
+
+.user__wapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.user__title {
+  margin: 0;
+}
+
+.user__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
+  height: 450px;
+  padding: 30px 0;
+  border: 1px solid #dddcdc;
+  border-radius: 30px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.user__list {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user__item label {
+  cursor: pointer;
+}
+
+.user__input {
+  height: 30px;
+  margin-left: 10px;
+  padding: 20px 0 20px 20px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 3px 3px 20px 3px rgb(0 0 0 / 20%);
+  outline: none;
+}
+
+.user__input::-webkit-input-placeholder {
+  font-size: 12px;
+  opacity: 0.3;
+}
+
+.user__input:focus::-webkit-input-placeholder {
+  text-indent: 200px;
+  transition: text-indent 0.9s;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.user__button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 16px;
+  min-width: 100px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #60f127;
+  cursor: pointer;
+}
+
+.user__button:hover {
+  background: #87f55b;
+}
+
+.user__button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #cbd6ee;
+}
+
+/* style todo */
+
+.todo {
+  height: 100vh;
+}
+
+.todo__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todo__head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.todo__title {
+  margin: 0;
+}
+
+.todo__label {
+  width: 80%;
+  margin-top: 40px;
+}
+
+.todo__input {
+  width: 80%;
+  height: 60px;
+  float: left;
+  padding: 20px;
+  border-radius: 8px 0 0 8px;
+  border: none;
+  box-shadow: 3px 3px 20px 3px rgb(0 0 0 / 20%);
+  outline: none;
+}
+
+.todo__input::-webkit-input-placeholder {
+  font-size: 18px;
+  opacity: 0.3;
+}
+
+.todo__input:focus::-webkit-input-placeholder {
+  text-indent: 1000px;
+  transition: text-indent 0.9s;
+}
+
+.todo__button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 19px;
+  min-width: 20%;
+  height: 60px;
+  padding: 8px 16px;
+  float: left;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  background: #60f127;
+  cursor: pointer;
+}
+
+.todo__button:hover {
+  background: #87f55b;
+}
+
+.todo__button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #cbd6ee;
+}
+
+.todo__list {
+  width: 80%;
+  margin: 40px 0 0 0;
+  padding: 0;
+}
+
+.todo__item {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  padding: 0 35px;
+  list-style: none;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 3px 3px 20px 3px rgb(0 0 0 / 20%);
+  transition: 0.2s;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.todo__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.todo__item:hover {
+  background: #ddd;
+}
+
+.done {
+  background: #60f127;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+.done:hover {
+  background: #87f55b;
+}
+
+.done::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 33%;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
