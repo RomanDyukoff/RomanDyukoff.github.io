@@ -236,13 +236,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .done {
-  background: #60f127;
+  background: #599940;
   color: #fff;
   text-decoration: line-through;
 }
 
 .done:hover {
-  background: #87f55b;
+  background: #79ad64;
 }
 
 .done::before {
