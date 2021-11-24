@@ -28,33 +28,27 @@
     <section class="user">
       <div class="container">
         <div class="user__wapper">
-          <div class="user__info">
+          <form class="user__addForm" action="#">
             <h2 class="user__title">Add Person</h2>
             <ul class="user__list">
               <li class="user__item">
-                <label for="name">
-                  <span class="user__first">First Name :</span>
-                  <input class="user__input" id="name" name="name" type="text" placeholder="Name..." required>
-                </label>
+                <label for="name">First Name :</label>
+                <input class="user__input" id="name" type="text" placeholder="name...">
               </li>
               <li class="user__item">
-                <label for="lastname">
-                  <span class="user__last">Last Name :</span>
-                  <input class="user__input" id="lastname" name="lastname" type="text" placeholder="Last Name..." required>
-                </label>
+                <label for="lastname">Last Name :</label>
+                <input class="user__input" id="lastname" type="text" placeholder="last name...">
               </li>
               <li class="user__item">
-                <label for="age">
-                  <span class="user__age">Age :</span>
-                  <input  class="user__input" id="age" name="age" type="number" placeholder="Age..." required>
-                </label>
+                <label for="age">Age :</label>
+                <input class="user__input" id="age" type="text" placeholder="age...">
               </li>
               <li class="user__item">
                 <button class="user__button" type="submit">Add</button>
               </li>
             </ul>
-          </div>
-          <!-- /.user__info -->
+            </div>
+          </form>
         </div>
         <!-- /.user__wapper -->
       </div>
@@ -65,10 +59,10 @@
         <div class="todo__wrapper">
           <div class="todo__head">
             <h2 class="todo__title">Welcome, Roma here are your tasks</h2>
-            <label class="todo__label" for="create">
-              <input  class="todo__input" name="create" type="text" placeholder="tasks..." required>
-              <button class="todo__button" type="button">Add</button>
-            </label>
+            <form class="todo__task" action="#">
+              <input  class="todo__input" type="text" placeholder="tasks..." required>
+              <button class="todo__button" type="submit">Add</button>
+            </form>
           </div>
           <!-- /.todo__head -->
           <ul class="todo__list">
