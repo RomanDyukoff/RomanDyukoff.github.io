@@ -6,16 +6,6 @@ const userName = document.getElementById('name'),
 const todoUser = [];
 
 
-
-function disabledBtn() {
-  userBtn.disabled = true;
-}
-
-function enableBtn() {
-  userBtn.disabled = false;
-}
-      
-
 userBtn.addEventListener('click', () => {
 
   const user = {
@@ -23,8 +13,24 @@ userBtn.addEventListener('click', () => {
     lastName: userlastName.value,
     age: userAge.value,
   }
+
+  todoUser.push(user)
+
+  console.log(todoUser);
 })
 
+const addTaskBtn = document.querySelector('.todo__addtask'),
+      modal = document.querySelector('.modal'),
+      closeModal = document.querySelector('.modal__close');
+
+addTaskBtn.addEventListener('click', () => {
+  modal.style.display = 'flex';
+})
+
+
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+})
 
 
 

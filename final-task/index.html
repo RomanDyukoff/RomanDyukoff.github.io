@@ -55,10 +55,10 @@
         <div class="todo__wrapper">
           <div class="todo__head">
             <h2 class="todo__title">Welcome, Roma here are your tasks</h2>
-            <form class="todo__task" action="#">
+            <!-- <form class="todo__task" action="#">
               <input  class="todo__input" type="text" placeholder="tasks..." required>
               <button class="todo__button" type="submit">Add</button>
-            </form>
+            </form> -->
           </div>
           <!-- /.todo__head -->
           <ul class="todo__list">
@@ -66,11 +66,25 @@
             <li class="todo__item">task 2</li>
             <li class="todo__item">task 3</li>
           </ul>
+          <button class="todo__addtask" type="button"></button>
         </div>
         <!-- /.todo__wrapper -->
       </div>
       <!-- /.container -->
     </section>
+    <div class="modal">
+      <div class="modal__window">
+        <form class="modal_form" action="">
+          <h3 class="modal__title">Add New</h3>
+          <input class="modal__subtitle" type="text" placeholder="Title...">
+          <input class="modal__task" type="text" placeholder="Description...">
+          <button class="modal__button">Add</button>
+        </form>
+        <button class="modal__close">X</button>
+      </div>
+      <div class="modal__overlay"></div>
+    </div>
+    <!-- /.todo__modal -->
   </main>
 
   <script src="js/main.js"></script>
