@@ -21,8 +21,8 @@
     <!-- /.container -->
   </header>
   <main class="main">
-    <section class="user">
-      <div class="container">
+    <div class="container">
+      <section class="user">
         <div class="user__wapper">
           <form class="user__addForm" action="#">
             <h2 class="user__title">Add Person</h2>
@@ -43,33 +43,32 @@
                 <button class="user__button" type="submit">Add</button>
               </li>
             </ul>
-            </div>
           </form>
         </div>
         <!-- /.user__wapper -->
-      </div>
-      <!-- /.container -->
-    </section>
-    <section class="todo">
-      <div class="container">
+      </section>
+      <section class="todo">
+        <h2 class="todo__welcome">Welcome, here are your task</h2>
         <div class="todo__wrapper">
-          <div class="todo__head">
-            <h2 class="todo__title">Welcome, Roma here are your tasks</h2>
-          </div>
-          <!-- /.todo__head -->
-          <ul class="todo__list">
-            <li class="todo__item done">
-                <input class="todo__checkbox" type="checkbox" id="checkbox">
-                <label  class="todo__label" for="checkbox">task 1</label>
-                <button class="todo__remove" data-item-id="${id}">X</button>
+          <button class="todo__btnAdd"></button>
+          <select class="todo__options" name="" id="">
+            <option value="active">активные</option>
+            <option value="completed">завершённые</option>
+            <option value="deleted">удалённые</option>
+          </select>
+          <ul class="todo__items" data-todo-option="active">
+            <li class="todo__list" data-todo-state="active">
+              <input class="todo__chek" id="task" type="checkbox" name="task">
+              <label class="todo__lable" for="task">Task 1fsefesaeeeeeeeefeafa</label>
+              <!-- <span class="todo__complete" data-todo-action="completed"></span> -->
+              <span class="todo__delete" data-todo-action="deleted">&#10006;</span>
             </li>
           </ul>
-          <button class="todo__addtask" type="button"></button>
         </div>
-        <!-- /.todo__wrapper -->
-      </div>
-      <!-- /.container -->
-    </section>
+        <!-- /.todo_wrapper -->
+      </section>
+    </div>
+    <!-- /.container -->
     <div class="modal">
       <div class="modal__window">
         <form class="modal_form" action="">
