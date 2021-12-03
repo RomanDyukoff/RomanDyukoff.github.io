@@ -40,7 +40,7 @@
                 <input class="user__input" id="age" type="text" placeholder="age...">
               </li>
               <li class="user__item">
-                <button class="user__button" type="submit">Add</button>
+                <button class="user__button" type="button">Add</button>
               </li>
             </ul>
           </form>
@@ -56,13 +56,13 @@
             <option value="completed">завершённые</option>
             <option value="deleted">удалённые</option>
           </select>
-          <ul class="todo__items" data-todo-option="active">
-            <li class="todo__list" data-todo-state="active">
+          <ul class="todo__list" data-todo-option="active">
+            <!-- <li class="todo__item" data-todo-state="active">
               <input class="todo__chek" id="task" type="checkbox" name="task">
               <label class="todo__lable" for="task">Task 1fsefesaeeeeeeeefeafa</label>
-              <!-- <span class="todo__complete" data-todo-action="completed"></span> -->
+              <span class="todo__complete" data-todo-action="completed"></span>
               <span class="todo__delete" data-todo-action="deleted">&#10006;</span>
-            </li>
+            </li> -->
           </ul>
         </div>
         <!-- /.todo_wrapper -->
@@ -73,9 +73,9 @@
       <div class="modal__window">
         <form class="modal_form" action="">
           <h3 class="modal__title">Add New</h3>
-          <input class="modal__subtitle" type="text" placeholder="Title...">
-          <input class="modal__task" type="text" placeholder="Description...">
-          <button class="modal__button">Add</button>
+          <input class="modal__task" type="text" placeholder="Title...">
+          <input class="modal__description" type="text" placeholder="Description...">
+          <button class="modal__button" type="button">Add</button>
         </form>
         <button class="modal__close">X</button>
       </div>
