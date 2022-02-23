@@ -1,0 +1,95 @@
+@import url("normalize.css");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Balsamiq Sans', cursive;
+    font-family: 'IBM Plex Serif', serif;
+    background: #818181;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    padding: 0 calc(50vw - 640px);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: #010081;
+    box-shadow: 0px 5px 6px 2px rgb(51 51 51 / 85%);
+    border: 3px solid #fdffff;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin-top: 50px;
+}
+
+.header__title {
+    display: inline-block;
+    margin: 0;
+    letter-spacing: 2px;
+    color: #fdffff;
+}
+
+.user__wrapper {
+    background: #c3c3c3;
+    border: 3px solid #fdffff;
+    width: 350px;
+    min-height: 350px;
+}
+
+.user__title {
+    text-align: center;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    color: #fdffff;
+    background: #010081;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.user__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: 310px;
+    padding: 25px;
+}
+
+.user__form label {
+    cursor: pointer;
+}
+
+.user__button {
+    font-size: 13px;
+    padding: 5px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 1px 0px rgb(51 51 51 / 85%);
+    cursor: pointer;
+}
+
+.user__button:hover {
+    background: #fdffff;
+}
+
+.user__button:active {
+    box-shadow: 0px 0px 0px 2px rgb(51 51 51 / 85%);
+}

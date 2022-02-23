@@ -20,7 +20,7 @@
     </div>
     <!-- /.container -->
   </header>
-  <main class="main">
+  <!-- <main class="main">
     <div class="container">
       <section class="user">
         <div class="user__wapper">
@@ -44,13 +44,13 @@
               </li>
             </ul>
           </form>
-        </div>
+        </div> -->
         <!-- /.user__wapper -->
       </section>
       <section class="todo">
         <h2 class="todo__welcome">Welcome, here are your task</h2>
         <div class="todo__wrapper">
-          <button class="todo__btnAdd"></button>
+          <button class="todo__openModal"></button>
           <select class="todo__options" name="" id="">
             <option value="active">активные</option>
             <option value="completed">завершённые</option>
@@ -69,17 +69,16 @@
       </section>
     </div>
     <!-- /.container -->
-    <div class="modal">
-      <div class="modal__window">
-        <form class="modal_form" action="">
-          <h3 class="modal__title">Add New</h3>
-          <input class="modal__task" type="text" placeholder="Title...">
-          <input class="modal__description" type="text" placeholder="Description...">
-          <button class="modal__button" type="button">Add</button>
-        </form>
-        <button class="modal__close">X</button>
+    <div class="modal" id="myModal">
+
+      <div class="modal__content">
+        <h3 class="modal__title">Add task</h3>
+        <span class="modal__close">&#215;</span>
+        <input  class="modal__task" type="text" placeholder="Title...">
+        <textarea class="modal__description" name="" id="" placeholder="Description..."></textarea>
+        <button class="modal__button" id="addBtn">Add</button>
       </div>
-      <div class="modal__overlay"></div>
+
     </div>
     <!-- /.todo__modal -->
   </main>

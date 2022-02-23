@@ -1,31 +1,47 @@
-const userName = document.getElementById('name'),
-      userlastName = document.getElementById('lastname'),
-      userAge = document.getElementById('age'),
-      userBtn = document.querySelector('.user__button'),
-      input = document.querySelector('.user__input');
-
-      
-const addTaskBtn = document.querySelector('.todo__btnAdd'),
-      modal = document.querySelector('.modal'),
-      closeModal = document.querySelector('.modal__close'),
-      overlay = document.querySelector('.modal__overlay');
-
-
-
 // modal
+const modalBtn = document.querySelector('.todo__openModal');
+const modal = document.querySelector('#myModal');
 
-addTaskBtn.addEventListener('click', () => {
-  modal.style.display = 'flex';
-})
+modalBtn.addEventListener('click', openModal);
+
+function openModal() {
+  modal.classList.add('open');
+
+  attachModalEvents();
+}
+
+function attachModalEvents() {
+  modal.querySelector('.modal__close').addEventListener('click', closeModal);
+  document.addEventListener('keydown', handelEscape);
+  modal.addEventListener('click', handleOutside);
+}
+
+function handelEscape(e) {
+   if (e.key === 'Escape') {
+     closeModal()
+   }
+}
+
+function handleOutside(e) {
+  const isClickOutside = !!event.target.closest('.modal__content');
+
+  if (!isClickOutside) {
+    closeModal()
+  }
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+
+  dettachModalEvents()
+}
 
 
-closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
-})
-
-overlay.addEventListener('click', () => {
-  modal.style.display = 'none';
-})
+function dettachModalEvents() {
+  modal.querySelector('.modal__close').removeEventListener('click', closeModal);
+  document.removeEventListener('keydown', handelEscape);
+  modal.removeEventListener('click', handleOutside);
+}
 
 // todo
 
@@ -65,109 +81,6 @@ function out() {
                         `;
 
 }
-
-// class DataBase {
-//   recordToDb(value) {
-//   console.log('🚀', 'recordToDb');
-    
-//   }
-
-//   getFromDb(value) {
-
-//   }
-
-//   removeFromDb() {
-//     document.querySelector('.todo__delete').addEventListener('click', () => {
-//       this.remove()
-//     })
-//   }
-// }
-
-// const servisDB = new DataBase();
-
-// class User {
-//   constructor(name, lastname, age, id) {
-//     this.todo = [];
-//     this.name = name;
-//     this.lastname = lastname;
-//     this.age = age;
-//     this.id = id;
-//   }
-// }
-
-// const users = [
-//   {
-//     name: 'Roma',
-//     lastname: 'Dyukov',
-//     age: 27,
-//     id: 1,
-//     todo: [
-//       {
-//         id: 1,
-//         title: 'title',
-//         description: 'bla bla bla',
-//         isChecked: false,
-//       },
-//       {
-//         id: 2,
-//         title: 'title2',
-//         description: 'bla bla bla',
-//         isChecked: true,
-//       },
-//     ],
-//   },
-//   {
-//     name: 'Katya',
-//     lastname: 'Kotova',
-//     age: 31,
-//     id: 2,
-//     todo: [
-//       {
-//         id: 1,
-//         title: 'title',
-//         description: 'bla bla bla',
-//         isChecked: false,
-//       },
-//       {
-//         id: 2,
-//         title: 'title2',
-//         description: 'bla bla bla',
-//         isChecked: true,
-//       },
-//     ],
-//   },
-// ]
-
-// const todoListContainer = document.querySelector('.todo__list');
-
-// todoListContainer.addEventListener('click', (e) => {
-//   if (e.target.dataset.itemId) {
-//     servisDB.removeFromDb()
-//   }
-  
-// })
-
-// function createItem({ title, isChecked, id }) {
-//   return `
-//           <!-- <li class="todo__item" data-todo-state="active">
-//             <input class="todo__chek" id="task" type="checkbox" name="task">
-//             <label class="todo__lable" for="task">${title}</label>
-//             <span class="todo__delete" data-todo-action="deleted">&#10006;</span>
-//           </li> -->
-//           `
-// }
-
-// let res = ''
-
-// for (let value of users[0].todo) {
-//   res += createItem(value) // props
-// }
-
-// todoListContainer.innerHTML = res;
-
-
-
-
 
 
 
