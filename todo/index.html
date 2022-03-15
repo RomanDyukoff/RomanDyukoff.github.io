@@ -4,37 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+    <title>MyTodo</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header container">
-        <h1 class="header__title">список дел</h1>
-    </header>
-    <main class="main container">
-        <section class="user">
-            <div class="user__wrapper">
-                <h3 class="user__title">добавить пользователя</h3>
-                <form class="user__form" action="">
-                    <label>имя:
-                        <input type="text" name="name" onchange="validate()">
-                    </label>
-                    <label>фамилия:
-                        <input type="text" name="lastname" onchange="validate()">
-                    </label>
-                    <label>возраст:
-                        <input type="text" name="age" onchange="validate()">
-                    </label>
-                    <button class="user__button" type="submit">добавить</button>
-                </form>
-            </div>
+    <header class="header"></header>
+    <main class="main">
+        <section class="person">
+            <form class="person__form" action="#">
+
+                <h2 class="person__title">Add Person</h2>
+
+                <div class="person__group">
+                    <input class="person__input" type="text" placeholder=" ">
+                    <label class="person__lable">Name</label>
+                </div>
+
+                <div class="person__group">
+                    <input class="person__input" type="text" placeholder=" ">
+                    <label class="person__lable">Surname</label>
+                </div>
+
+                <div class="person__group">
+                    <input class="person__input" type="text" placeholder=" ">
+                    <label class="person__lable">Age</label>
+                </div>
+
+                <button class="person__button">Add</button>
+
+            </form>
         </section>
     </main>
 
     <script src="app.js"></script>
 </body>
 </html>
-
