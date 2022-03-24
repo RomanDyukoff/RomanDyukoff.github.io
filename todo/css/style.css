@@ -130,4 +130,5 @@ input[type=number]::-webkit-outer-spin-button {
 .header__create {
     position: absolute;
     right: 10%;
+    width: 135px;
 }

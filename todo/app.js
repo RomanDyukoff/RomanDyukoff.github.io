@@ -1,13 +1,49 @@
 const perForm = document.querySelector('.person__form');
-const inputs = document.querySelectorAll('input');
-const addPerson = document.querySelector('.person__button');
+const signInForm = document.querySelector('.signin');
+
+// функционал кнопки в шапке приложения
+
 const createBtn = document.querySelector('.header__create');
-
-inputs.forEach(input => input.addEventListener('blur', check))
-perForm.addEventListener('submit', handleSubmit)
+createBtn.addEventListener('click', regWindow)
 
 
-function validata() {
+function regWindow(e) {
+
+    let per = document.querySelector('.person');
+    let signIn = document.querySelector('.signin');
+
+    if (e.target.value === 'Create Person') {
+        e.target.value = 'Sign In'
+        per.classList.remove('novisible')
+        signIn.classList.add('novisible')
+    } else if (e.target.value === 'Sign In') {
+        e.target.value = 'Create Person'
+        per.classList.add('novisible')
+        signIn.classList.remove('novisible')
+    }
+
+}
+
+// функции для валидаций полей ввода
+
+const inputsAll = document.querySelectorAll('input');
+const perInputs = perForm.querySelectorAll('.person__input')
+const signInInputs = signInForm.querySelectorAll('.signin__input')
+
+perInputs.forEach(input => input.addEventListener('blur', check))
+signInInputs.forEach(input => input.addEventListener('blur', check))
+
+function check(e) {
+
+    if (!e.target.value.trim()) {
+        e.target.classList.add('notvalid')
+    } else {
+        e.target.classList.remove('notvalid')
+    }
+
+}
+
+function validata(inputs) {
 
     let isValid = true
 
@@ -21,40 +57,36 @@ function validata() {
     
 }
 
-function check(e) {
+// функционал полей для ввода
 
-    if (!e.target.value.trim()) {
-        e.target.classList.add('notvalid')
-    } else {
-        e.target.classList.remove('notvalid')
-    }
+const allUsers = []; 
 
-}
+// signInForm.addEventListener('submit', handleSubmit);
+perForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e) {
     e.preventDefault()
   
-    if (validata()) {
-        {
-            name = perForm.querySelectorAll('.person__input')[0].value,
-            surname = perForm.querySelectorAll('.person__input')[1].value,
-            age = perForm.querySelectorAll('.person__input')[2].value
-            email = perForm.querySelectorAll('.person__input')[3].value
-            password = perForm.querySelectorAll('.person__input')[4].value
-        }
+
+    if (validata(perInputs)) {
+
+        allUsers.push({
+            name : perForm.querySelectorAll('.person__input')[0].value,
+            surname : perForm.querySelectorAll('.person__input')[1].value,
+            age : perForm.querySelectorAll('.person__input')[2].value,
+            email : perForm.querySelectorAll('.person__input')[3].value,
+            password : perForm.querySelectorAll('.person__input')[4].value
+        })
+
         perForm.reset()
     } else {
         alert('Заполни все окна');
     }
 }
 
-createBtn.addEventListener('click', regWindow)
+
+// function saveToStorage(arr) {
+    
+// }
 
 
-function regWindow() {
-  let per = document.querySelector('.person');
-  let signIn = document.querySelector('.signin');
-
-  per.classList.remove('novisible')
-  signIn.classList.add('novisible')
-}
