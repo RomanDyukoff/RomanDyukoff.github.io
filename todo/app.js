@@ -59,9 +59,6 @@ function validata(inputs) {
 
 // функционал полей для ввода
 
-const allUsers = []; 
-
-// signInForm.addEventListener('submit', handleSubmit);
 perForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e) {
@@ -70,23 +67,31 @@ function handleSubmit(e) {
 
     if (validata(perInputs)) {
 
-        allUsers.push({
-            name : perForm.querySelectorAll('.person__input')[0].value,
-            surname : perForm.querySelectorAll('.person__input')[1].value,
-            age : perForm.querySelectorAll('.person__input')[2].value,
-            email : perForm.querySelectorAll('.person__input')[3].value,
-            password : perForm.querySelectorAll('.person__input')[4].value
+        saveToStorage({
+            name: perForm.querySelector("input[name = 'name']").value,
+            surname: perForm.querySelector("input[name = 'surname']").value,
+            age: perForm.querySelector("input[name = 'age']").value,
+            email: perForm.querySelector("input[name = 'email']").value,
+            password: perForm.querySelector("input[name = 'password']").value
         })
 
         perForm.reset()
+
     } else {
         alert('Заполни все окна');
     }
 }
 
 
-// function saveToStorage(arr) {
-    
+function saveToStorage(user) {
+    const allUsers = JSON.parse(localStorage.getItem('allUsers')) || [];
+
+
+   localStorage.setItem('allUsers', JSON.stringify([...allUsers, user]))
+}
+
+// function getToStorage(arr) {
+//     localStorage.getItem('allUsers')
 // }
 
 
