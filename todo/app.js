@@ -1,6 +1,3 @@
-const perForm = document.querySelector('.person__form');
-const signInForm = document.querySelector('.signin');
-
 // функционал кнопки в шапке приложения
 
 const createBtn = document.querySelector('.header__create');
@@ -26,7 +23,9 @@ function regWindow(e) {
 
 // функции для валидаций полей ввода
 
-const inputsAll = document.querySelectorAll('input');
+const perForm = document.querySelector('.person__form');
+const signInForm = document.querySelector('.signin');
+
 const perInputs = perForm.querySelectorAll('.person__input')
 const signInInputs = signInForm.querySelectorAll('.signin__input')
 
@@ -48,14 +47,13 @@ function validata(inputs) {
     let isValid = true
 
     inputs.forEach(input => {
-        if (!input.value.trim()) {
-            isValid = false
-        }
+        if (!input.value.trim()) isValid = false
     })
 
     return isValid
     
 }
+
 
 // функционал полей для ввода
 
@@ -63,7 +61,6 @@ perForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e) {
     e.preventDefault()
-  
 
     if (validata(perInputs)) {
 
@@ -80,18 +77,44 @@ function handleSubmit(e) {
     } else {
         alert('Заполни все окна');
     }
+
 }
 
+signInForm.addEventListener('submit', logApp)
+
+function logApp(e) {
+    e.preventDefault()
+
+    const person = JSON.parse(localStorage.getItem('users'))
+    let email = document.querySelector("input[name = 'email']").value
+    let password = document.querySelector("input[name = 'password']").value
+
+    let result = person.find(el => {
+        let res = false
+
+        if(email === el.email && password === el.password) res = true
+
+        return res
+    })
+
+    if(validata(signInInputs)) {
+
+        if(result) {
+            console.log('kek');
+        } else {
+            alert('Неверные данные')
+        }
+        
+    } else {
+        alert('Введите данные для входа')
+    }
+    
+}
+
+// функции для работы с локал стораджем
 
 function saveToStorage(user) {
-    const allUsers = JSON.parse(localStorage.getItem('allUsers')) || [];
+    const allUsers = JSON.parse(localStorage.getItem('users')) || [];
 
-
-   localStorage.setItem('allUsers', JSON.stringify([...allUsers, user]))
+    localStorage.setItem('users', JSON.stringify([...allUsers, user]))
 }
-
-// function getToStorage(arr) {
-//     localStorage.getItem('allUsers')
-// }
-
-
