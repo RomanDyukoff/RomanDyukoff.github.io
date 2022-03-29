@@ -89,13 +89,11 @@ function logApp(e) {
     let email = document.querySelector("input[name = 'email']").value
     let password = document.querySelector("input[name = 'password']").value
 
-    let result = person.find(el => {
-        let res = false
-
-        if(email === el.email && password === el.password) res = true
-
-        return res
+    let result = person.some(el => {
+        if(email === el.email && password === el.password) return true
     })
+
+    console.log(result);
 
     if(validata(signInInputs)) {
 
@@ -108,7 +106,7 @@ function logApp(e) {
     } else {
         alert('Введите данные для входа')
     }
-    
+
 }
 
 // функции для работы с локал стораджем
